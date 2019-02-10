@@ -3,7 +3,7 @@ import { Configuration } from 'webpack';
 
 const common: Configuration = {
   entry: {
-    echo: './src/client/components/echo/index.tsx',
+    echo: path.join(__dirname, 'src/client/components/echo/index.tsx'),
   },
   output: {
     path: path.resolve(__dirname, 'dist'),

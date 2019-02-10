@@ -1,20 +1,22 @@
-import React, { PureComponent, ReactNode } from 'react';
+import React, { ReactNode } from 'react';
 
 interface Props {
   children: ReactNode;
   message: string;
 }
 
-export default class Html extends PureComponent<Props> {
-  render() {
-    return (
-      <html>
-        <body>
-          <div id="app">{this.props.children}</div>
-          <script id="message" type="text/plain" data-message={this.props.message} />
-          <script src="/echo.bundle.js" />
-        </body>
-      </html>
-    );
-  }
-}
+const Html = (props: Props): JSX.Element => {
+  const { children, message } = props;
+
+  return (
+    <html>
+      <body>
+        <div id="app">{children}</div>
+        <script id="message" type="text/plain" data-message={message} />
+        <script src="/echo.bundle.js" />
+      </body>
+    </html>
+  );
+};
+
+export default Html;

@@ -1,11 +1,11 @@
-import React, { PureComponent } from 'react';
+import React from 'react';
 
 interface Props {
   message: string;
 }
 
-export default class App extends PureComponent<Props> {
-  render() {
-    return <div>{this.props.message}</div>;
-  }
-}
+const App = (props: Props): JSX.Element => {
+  return <div>{props.message}</div>;
+};
+
+export default App;

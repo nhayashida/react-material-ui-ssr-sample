@@ -14,12 +14,12 @@ npm run build
 
 1.  Build a Docker image
 ```
-docker build -f Dockerfile -t react-ssr-express-example:latest .
+docker build -f Dockerfile -t react-material-ui-ssr-sample:latest .
 ```
 
 2.  Run
 ```
-docker run -it -p 3000:3000 react-ssr-express-example:latest
+docker run -it -p 3000:3000 react-material-ui-ssr-sample:latest
 ```
 
 #### (Option 3). Run app from Visual Studio Code

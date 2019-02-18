@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
 
-const elem = document.getElementById('message');
-const message = elem ? elem.getAttribute('data-message') || '' : '';
+const elem = document.getElementById('init-state');
+const initState = JSON.parse((elem && elem.getAttribute('data-state')) || '{}');
 
-ReactDOM.hydrate(<App message={message} />, document.getElementById('app'));
+ReactDOM.hydrate(<App {...initState} />, document.getElementById('app'));

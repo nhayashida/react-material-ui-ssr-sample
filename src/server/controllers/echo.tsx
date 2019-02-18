@@ -6,9 +6,11 @@ import Html from '../../client/components/echo/Html';
 
 const echo = (req: Request, res: Response) => {
   const message = req.query['message'] || '';
+
+  const initState = { message };
   renderToNodeStream(
-    <Html message={message}>
-      <App message={message} />
+    <Html initState={JSON.stringify(initState)}>
+      <App {...initState} />
     </Html>,
   ).pipe(res);
 };
